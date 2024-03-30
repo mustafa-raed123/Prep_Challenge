@@ -31,7 +31,7 @@
 
 const customerAndAge = (obj) => {
   let arr =[];
-  for (let index = 0; index < Object.keys(obj).length; index++) {
+  for (let index in Object.keys(obj)) {
     arr.push(`Customer Name :${Object.keys(obj)[index]} , Age :${Object.values(obj)[index]}`)
 }
 return arr
