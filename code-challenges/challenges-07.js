@@ -109,14 +109,14 @@ return formatcv;
 //  Rekey wants to get statistics about the applicants
 //  using the array of objects you will be getting, return an object that has the following properties
 //
-// let result = {
-//     python_devs: 0,
-//     javaScript_devs: 0,
-//     dotNet_devs: 0,
-//     java_devs: 0,
-//     totalApplicants: 0,
-//     rejectedApplicants: 0,
-// }
+ let result = {
+     python_devs: 0,
+     javaScript_devs: 0,
+     dotNet_devs: 0,
+     java_devs: 0,
+     totalApplicants: 0,
+     rejectedApplicants: 0,
+ }
 //
 // and fill it up based on the results
 
@@ -125,31 +125,31 @@ return formatcv;
 
 const applicationsStatics = (arr) => {
     
-    for (let applicant = 0; applicant < cvs.length; applicant++) {
-        applications.totalApplicants++;
-        if(!((cvs[applicant].firstName !=null && cvs[applicant].firstName !="" )  || (cvs[applicant].lastName != null && cvs[applicant].lastName !="" ) ) ||cvs[applicant].yearsOfExperience <=1 ) {
+    for (let applicant = 0; applicant < arr.length; applicant++) {
+        result.totalApplicants++;
+        if(!((arr[applicant].firstName !=null && arr[applicant].firstName !="" )  || (arr[applicant].lastName != null && arr[applicant].lastName !="" ) ) ||arr[applicant].yearsOfExperience <=1 ) {
 
-       arr.rejectedApplicants++;
+       result.rejectedApplicants++;
    }else {
-       switch(cvs[applicant].tech){
+       switch(arr[applicant].tech){
            case "JS":
-               arr.javaScript_devs++;
+               result.javaScript_devs++;
            break;
            case ".Net":
-               arr.dotNet_devs++;
+               result.dotNet_devs++;
            break;
            case "Python":
-               arr.python_devs++;
+               result.python_devs++;
            break;
            case "Java":
-               arr.java_devs++;
+               result.java_devs++;
            break;
 
 
        }
    }
 }
-return arr;
+return result;
 
 
     
@@ -279,7 +279,14 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
-    
+    data.grades.forEach(element => {
+        element.classes.forEach(ele => {  
+        let sum = ele.classScores.reduce((acc , current) =>   acc + current)
+         ele.avg =  Math.floor( sum / ele.classScores.length)
+       });
+      
+      });
+      return data
 };
 // -------------------------------------------------------------------------------------------------------
 
