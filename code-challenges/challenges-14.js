@@ -14,7 +14,7 @@
 //
 // Using the slice and indexOf/lastIndexOf methods, return the last word in a string
 //
-// Note: consider that the string may have one word but never empty  
+
 //
 // Input: "I did my waiting 12 years of it in Azkaban"
 // Output: "Azkaban"
@@ -24,9 +24,12 @@
 //
 
 const LastWord = (str) => {
-    const lastSpaceIndex = str.lastIndexOf(" ");
-    return str.slice(lastSpaceIndex + 1)
+
+    let result = str.lastIndexOf(" ")
+    return str.slice(result + 1)
+
 }
+
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -40,9 +43,11 @@ const LastWord = (str) => {
 //  Output: "potter"
 
 const LastWord_2 = (str) => {
+
     let strArray = str.split(" ")
     let lastWord = strArray[strArray.length - 1]
     return lastWord
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -65,19 +70,17 @@ const LastWord_2 = (str) => {
 //
 
 const replaceWords = (str) => {
+
+    let arr = str.split(" ")
+    let result = []
+    let s = ""
+      arr.forEach(e =>{
+     s =  e == "I" ? e = "We" : e == "am" ? e = "are" :  e == "was" ? e = "were" : e;
+     result.push(s)
+    } )
+    return result.join(" ")
     
-    let strarr = str.split(" ")
-    console.log(strarr)
-    for(let i in strarr){
-        if(strarr[i] == "I"){
-            strarr[i] = "We"
-        }else if(strarr[i] =="am"){
-            strarr[i] = "are"
-        }else if(strarr[i] == "was"){
-            strarr[i] = "were"
-        }
-    }
-    return (strarr.join(" "))
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -92,19 +95,22 @@ const replaceWords = (str) => {
 //
 
 const arrToStr = (arr) => {
-    let str = ""
+  let str = ""
     arr.forEach((element,index) => {
       if(index != 4){
-          str += element +" ";
+        if(arr.length - 1 == index){
+          str += element 
+        } else {
+          str += element +" ";       
+        }
       }else {
           str += element +", "
       }
     });
-   str[str.lastIndexOf(" ")].replace(" ","")
+    let r =  str.lastIndexOf(" ")
 
-  
-   return str.split(" ").join(" ")[str.lastIndexOf(" ")].replace(" ","")
-  
+
+  return str
 }
 // -------------------------------------------------------------------------------------------------------
 
