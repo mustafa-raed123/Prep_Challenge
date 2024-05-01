@@ -24,7 +24,9 @@
         {
             "language": "javascript",
             "source": [
-                "let obj = {};\nfor(let i =0 ;i<arr.length ;i++){\n  obj[arr[i]]= ++obj[arr[i]] || 1\n}\nlet key = Object.keys(obj)\nlet value = Object.values(obj)\nlet max = Math.max(...value)\nlet index = value.findIndex(x =>{return x == max})\nlet repeated = key[index]\nlet deletions = 0\n  for(let i in arr){\n    if(arr[i] != repeated )\n    deletions++\n  }\n\nreturn deletions"
+
+                "function equalizeArray(arr) {\n    let obj = {};\nfor(let i =0 ;i<arr.length ;i++){\n  obj[arr[i]]= ++obj[arr[i]] || 1\n}\nlet key = Object.keys(obj)\nlet value = Object.values(obj)\nlet max = Math.max(...value)\nlet index = value.findIndex(x =>{return x == max})\nlet repeated = key[index]\nlet deletions = 0\n  for(let i in arr){\n    if(arr[i] != repeated )\n    deletions++\n  }\n\nreturn deletions\n\n}"
+
             ],
             "outputs": []
         },
@@ -45,7 +47,9 @@
         {
             "language": "javascript",
             "source": [
-                "let games = 0;\nlet cost = p;\n\nwhile (s >= cost) {\n    games++;\n    s -= cost;\n    cost = Math.max(cost - d, m); \n}\n\nreturn games;\n"
+
+                "function howManyGames(p, d, m, s) {\n    if(p > s){\n    return 0\n  }\n   let arr = [p];\n  for(let i = 1 ; i < s/m ; i++){\n    if(arr[i - 1 ] > m && arr[i - 1 ] - d > m ){\n      arr.push(arr[i - 1 ]-d )\n    }else {\n      arr.push(m)\n    }\n  }\n\n  \n  let price = 0\n  let manyTimes= 0\n  arr.forEach((e)=>{\n\n    if(!((price + e) > s) ){\n      manyTimes++\n      price += e\n    }\n  })\nreturn manyTimes\n\n}"
+
             ],
             "outputs": []
         },
