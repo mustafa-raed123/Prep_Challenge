@@ -8,7 +8,7 @@ const {
 } = require("../code-challenges/challenges-14");
 
 describe("Challenge14-01", () => {
-  test.skip("LastWord", () => {
+  test("LastWord", () => {
     let test1 = "I did my waiting 12 years of it in Azkaban";
     let res1 = "Azkaban";
     let test2 = "Impossible";
@@ -23,7 +23,7 @@ describe("Challenge14-01", () => {
 });
 
 describe("Challenge14-02", () => {
-  test.skip("LastWord_2", () => {
+  test("LastWord_2", () => {
     let test1 = "I did my waiting 12 years of it in Azkaban";
     let res1 = "Azkaban";
     let test2 = "Impossible";
@@ -68,7 +68,9 @@ describe("Challenge14-04", () => {
 });
 
 describe("Challenge14-05", () => {
-  test("letter_Counter", () => {
+
+  test.skip("letter_Counter", () => {
+
     let test1 = "aaaa bbb sdf";
     let res1 = "a4 b3 s1d1f1";
 

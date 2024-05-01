@@ -14,7 +14,7 @@
 //
 // Using the slice and indexOf/lastIndexOf methods, return the last word in a string
 //
-// Note: consider that the string may have one word but never empty
+
 //
 // Input: "I did my waiting 12 years of it in Azkaban"
 // Output: "Azkaban"
@@ -24,9 +24,13 @@
 //
 
 const LastWord = (str) => {
+
     let result = str.lastIndexOf(" ")
     return str.slice(result + 1)
+
 }
+
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -39,9 +43,11 @@ const LastWord = (str) => {
 //  Output: "potter"
 
 const LastWord_2 = (str) => {
-    let arr = str.split(" ")
-    let result = arr[arr.length - 1]
-    return result
+
+    let strArray = str.split(" ")
+    let lastWord = strArray[strArray.length - 1]
+    return lastWord
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -64,6 +70,7 @@ const LastWord_2 = (str) => {
 //
 
 const replaceWords = (str) => {
+
     let arr = str.split(" ")
     let result = []
     let s = ""
@@ -73,6 +80,7 @@ const replaceWords = (str) => {
     } )
     return result.join(" ")
     
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -87,7 +95,7 @@ const replaceWords = (str) => {
 //
 
 const arrToStr = (arr) => {
-    let str = ""
+  let str = ""
     arr.forEach((element,index) => {
       if(index != 4){
         if(arr.length - 1 == index){
@@ -103,7 +111,6 @@ const arrToStr = (arr) => {
 
 
   return str
-   
 }
 // -------------------------------------------------------------------------------------------------------
 
