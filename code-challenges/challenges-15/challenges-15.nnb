@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Equality In An Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function equalizeArray(arr) {\n    let obj = {};\nfor(let i =0 ;i<arr.length ;i++){\n  obj[arr[i]]= ++obj[arr[i]] || 1\n}\nlet key = Object.keys(obj)\nlet value = Object.values(obj)\nlet max = Math.max(...value)\nlet index = value.findIndex(x =>{return x == max})\nlet repeated = key[index]\nlet deletions = 0\n  for(let i in arr){\n    if(arr[i] != repeated )\n    deletions++\n  }\n\nreturn deletions\n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Halloween Sale](https://www.hackerrank.com/challenges/halloween-sale/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function howManyGames(p, d, m, s) {\n    if(p > s){\n    return 0\n  }\n   let arr = [p];\n  for(let i = 1 ; i < s/m ; i++){\n    if(arr[i - 1 ] > m && arr[i - 1 ] - d > m ){\n      arr.push(arr[i - 1 ]-d )\n    }else {\n      arr.push(m)\n    }\n  }\n\n  \n  let price = 0\n  let manyTimes= 0\n  arr.forEach((e)=>{\n\n    if(!((price + e) > s) ){\n      manyTimes++\n      price += e\n    }\n  })\nreturn manyTimes\n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Sherlock And Squares](https://www.hackerrank.com/challenges/sherlock-and-squares/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
