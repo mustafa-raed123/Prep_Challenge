@@ -81,10 +81,14 @@ const filterLinks = (str) => {
 //
 
 const isPalindrome = (str) => {
-  let reg = /\b[A-Za-z1-9]+\b/g
-  let s = str.toLowerCase().match(reg).join('')
-  let l = s.split(' ').reverse().join('')
-  return s==l
+  let reg = /[a-z0-9]/g;
+  let lowercase = str.toLowerCase();
+  let s = lowercase.match(reg);
+
+  let joins = s ? s.join('') : '';
+  let clean = joins.split('').reverse().join('');
+  
+  return joins === clean;
 }
 // -------------------------------------------------------------------------------------------------------
 
